@@ -241,7 +241,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com'
+        link: 'https://github.com/liang-xb/my-knowledge'
       },
       {
         icon: {
