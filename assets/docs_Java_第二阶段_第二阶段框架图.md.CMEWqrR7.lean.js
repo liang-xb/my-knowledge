@@ -1,0 +1,1 @@
+import{c as a,Q as e,j as t}from"./chunks/framework.CHJbb1iY.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/Java/第二阶段/第二阶段框架图.md","filePath":"docs/Java/第二阶段/第二阶段框架图.md"}'),o={name:"docs/Java/第二阶段/第二阶段框架图.md"};function s(c,r,_,n,d,p){return e(),t("div")}const f=a(o,[["render",s]]);export{m as __pageData,f as default};
