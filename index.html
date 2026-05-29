@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="welcome-blocking">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      welcome-blocking: 首次加载时立即展示深色遮罩，防止白屏闪烁。
+      head 脚本在非首页时立即移除，首页由 WelcomeOverlay 接管。
+    -->
+    <style>
+      html.welcome-blocking::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        background: #0d1321;
+      }
+    </style>
+    <script>
+      (function(){
+        var p=location.pathname;
+        var isHome = p==='/my-knowledge/' || p==='/my-knowledge/index.html' || p==='/' || p==='/index.html' || p.endsWith('/index');
+        if (!isHome || sessionStorage.getItem('welcome-overlay-shown')) {
+          document.documentElement.classList.remove('welcome-blocking');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/@vitepress/client/app.js"></script>
+  </body>
+</html>

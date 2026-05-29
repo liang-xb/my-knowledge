@@ -1,0 +1,335 @@
+/* ============================================================
+ *  Layout — 文档布局、侧边栏、页脚
+ *
+ *  包含：
+ *    1. 页脚（.VPFooter）样式
+ *    2. 文档页面容器（.VPDoc）宽度与布局
+ *    3. 独立页面（.VPPage）居中布局
+ *    4. 左侧边栏（.VPSidebar）样式
+ *    5. 右侧目录容器（.aside-container）定位
+ *    6. 侧边栏文章高亮（sidebar-active-highlight）
+ *    7. 侧边栏文件夹/文档图标
+ * ============================================================ */
+
+/* ── Footer — 改这里换页脚样式 ────────────────────────────── */
+.VPFooter {
+  margin-top: 0 !important;
+  padding: 20px 24px !important;
+  border-top: 1px solid var(--site-panel-border) !important;
+  background: var(--vp-c-bg-alt) !important;  /* 改 --vp-c-bg-alt 换页脚背景色 */
+}
+
+.VPFooter .container,
+.VPFooter .message,
+.VPFooter .copyright {
+  color: var(--vp-c-text-3) !important;
+  font-size: 13px;
+}
+
+/* ── Docs Layout ───────────────────────────────────────────── */
+
+/* 文档容器 — 桌面端右侧留白给目录导航 */
+.VPDoc .container {
+  margin: 0 !important;
+}
+
+@media (min-width: 960px) {
+  .VPDoc .container {
+    padding-right: 50px !important;
+  }
+}
+
+/* 有右侧目录时，内容区域限制最大宽度 */
+.VPDoc.has-aside .content-container {
+  max-width: 1200px !important;
+}
+
+/* 无侧边栏的页面（如首页、独立页面）：内容与容器加宽居中 */
+@media (min-width: 960px) {
+  .VPDoc:not(.has-sidebar) .content {
+    max-width: 1552px !important;
+  }
+
+  .VPDoc:not(.has-sidebar) .container {
+    display: flex;
+    justify-content: center;
+    max-width: 1562px !important;
+  }
+}
+
+/* 移动端文档页面 — 对称内边距，防止内容偏移 */
+@media (max-width: 959px) {
+  .VPDoc .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .VPPage {
+    width: 100%;
+    padding: 28px 20px 64px !important;
+    box-sizing: border-box;
+  }
+}
+
+/* ── Page Transition — 侧边栏文章切换动画 ──────────────────────
+ *  两阶段过渡（与 xiaolinnote 一致）：
+ *    1. 旧内容淡出上移（route-leave）
+ *    2. 新内容从下方淡入滑入（route-enter）
+ *  由 Layout.vue 中的路由钩子触发
+ *  prefers-reduced-motion 由 _components.css 全局适配
+ * ──────────────────────────────────────────────────────────── */
+
+/* 旧内容：淡出 + 向上滑出 */
+@keyframes doc-route-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* 新内容：从下方淡入滑入 */
+@keyframes doc-route-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 动画应用在 .content（文章内容包装器）而非 .VPDoc 或 .container。
+ *
+ * DOM 结构：.VPDoc > .container > [.aside > .aside-container] + [.content > .content-container]
+ *   .aside 和 .content 是 .container 的直接子元素（兄弟关系）。
+ *   .aside-container 使用 position: fixed，需要相对视口定位。
+ *
+ * 问题：.VPDoc 或 .container 上的 transform 会创建新的 containing block，
+ *   导致 .aside-container 的 fixed 定位相对于该祖先而非视口，动画结束后产生跳动。
+ *
+ * 方案：仅对 .content 应用动画，.aside 不受影响，.aside-container 保持视口 fixed 定位。 */
+.VPDoc.route-leave .content {
+  animation: doc-route-leave 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.VPDoc.route-enter .content {
+  animation: doc-route-enter 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* 独立页面（VPPage）使用相同的路由过渡动画 */
+.VPPage.route-leave {
+  animation: doc-route-leave 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.VPPage.route-enter {
+  animation: doc-route-enter 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ── Page Layout — 独立页面（描述页、联系页等） ─────────────── */
+.VPPage {
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  padding: 40px 48px 96px !important;
+}
+
+.VPPage .custom-block {
+  margin: 20px 0 !important;
+  padding: 20px 24px !important;
+}
+
+.VPPage h1 {
+  margin-bottom: 40px !important;
+  text-align: center;
+}
+
+/* ── Sidebar — 侧边栏样式，改这里换侧边栏背景、边框 ──────── */
+
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-divider);
+  padding-bottom: 32px !important;
+}
+
+/* 桌面端：毛玻璃效果 + 禁用过渡动画 */
+@media (min-width: 960px) {
+  .VPSidebar {
+    backdrop-filter: blur(14px) saturate(1.4);
+    transition: none !important;
+  }
+}
+
+/* 移动端：确保侧边栏在小屏设备上正常显示
+ *  1. 禁用 backdrop-filter — 部分移动端浏览器在 transform 动画期间
+ *     对 backdrop-filter 的合成处理有 bug，导致内容不可见
+ *  2. 使用完全不透明的主背景色，避免穿透问题
+ *  自定义修改：使用 --vp-c-bg-soft 替代 --vp-c-bg，加深背景色避免穿透 */
+@media (max-width: 959px) {
+  .VPSidebar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: var(--vp-c-bg-soft) !important;
+  }
+}
+
+.VPSidebarNav {
+  padding-left: 20px !important;
+}
+
+/* 右侧目录容器 — 固定定位，跟随滚动 */
+.aside-container {
+  position: fixed;
+  top: 0;
+  /* 顶部偏移 = 导航栏高度 + 可能存在的顶部横幅高度 + 文档顶部间距 + 10px 余量 */
+  padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + var(--vp-doc-top-height, 0px) + 10px) !important;
+  width: 250px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;   /* Firefox 隐藏滚动条 */
+  margin-left: 5px;
+  padding-left: 10px;
+}
+
+/* 侧边栏文字行高 */
+.VPSidebarItem .text {
+  line-height: 1.55;
+}
+
+/* 一级菜单项 — 加粗 */
+.VPSidebarItem.level-0 > .item > .link > .text,
+.VPSidebarItem.level-0 > .item > .text {
+  color: var(--vp-c-text-1);
+  font-weight: 700;
+}
+
+/* 二级菜单项 — 圆角、hover 背景 */
+.VPSidebarItem.level-1 .link {
+  border-radius: 7px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.VPSidebarItem.level-1 .link:hover,
+.VPSidebarItem.level-2 .link:hover {
+  background: var(--vp-c-brand-soft);
+}
+
+/* ── Sidebar Active Highlight — 当前阅读文章高亮 ──────────────
+ *  由 SiteEnhancer.vue 中的 highlightActiveSidebar() 动态添加
+ *  sidebar-active-highlight 类名到当前页面对应的侧边栏项
+ * ──────────────────────────────────────────────────────────── */
+.VPSidebar .VPSidebarItem.sidebar-active-highlight > .item > .link {
+  background: rgba(37, 99, 235, 0.1) !important;
+  border-left: 3px solid var(--vp-c-brand-1);
+  border-radius: 0 8px 8px 0;
+  padding-left: 8px;
+  margin-left: -3px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.VPSidebar .VPSidebarItem.sidebar-active-highlight > .item > .link > .text {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 600 !important;
+}
+
+/* 暗色模式高亮 — 暖灰 + 石板蓝 */
+.dark .VPSidebar .VPSidebarItem.sidebar-active-highlight > .item > .link {
+  background: rgba(104, 116, 163, 0.1) !important;
+  border-left-color: var(--vp-c-brand-1);
+}
+
+.dark .VPSidebar .VPSidebarItem.sidebar-active-highlight > .item > .link > .text {
+  color: var(--vp-c-brand-2) !important;
+}
+
+/* 暗色模式 — 侧边栏边框 */
+.dark .VPSidebar {
+  border-right-color: rgba(161, 161, 170, 0.06);
+}
+
+/* 暗色模式 — 文件夹组竖线 */
+.dark .group:has([role='button']) .VPSidebarItem.level-0 .items {
+  border-left-color: rgba(161, 161, 170, 0.06);
+}
+
+/* 暗色模式 — 页脚 */
+.dark .VPFooter {
+  border-top-color: rgba(161, 161, 170, 0.06) !important;
+}
+
+/* ── Sidebar Icons — 侧边栏文件夹/文档图标 ──────────────────
+ *  改这里换图标：替换 url() 中的路径即可
+ *  当前图标：文件夹 → /文件夹.png，文档 → /文档.png
+ *  中文文件名需 URL 编码（%E6%96%87%E4%BB%B6%E5%A4%B9 = 文件夹）
+ * ──────────────────────────────────────────────────────────── */
+
+/* 文件夹组 — 左侧竖线标识层级 */
+.group:has([role='button']) .VPSidebarItem.level-0 .items {
+  padding-left: 15px !important;
+  border-left: 1px solid var(--vp-c-divider);
+  border-radius: 2px;
+  transition: background-color 0.25s;
+}
+
+/* 文件夹图标 — 非链接类型的菜单项 */
+#VPSidebarNav .VPSidebarItem:not(.is-link).collapsed > .item,
+#VPSidebarNav .VPSidebarItem:not(.is-link) > .item {
+  display: inline-flex;
+  align-items: center;
+}
+
+#VPSidebarNav .VPSidebarItem:not(.is-link).collapsed > .item::before,
+#VPSidebarNav .VPSidebarItem:not(.is-link) > .item::before {
+  content: '';
+  background-image: url('/%E6%96%87%E4%BB%B6%E5%A4%B9.png');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: cover;
+  margin-right: 4px;
+}
+
+/* 文档图标 — 链接类型的菜单项 */
+#VPSidebarNav .VPSidebarItem.is-link > .item {
+  display: inline-flex;
+  align-items: center;
+}
+
+#VPSidebarNav .VPSidebarItem.is-link > .item::before {
+  content: '';
+  background-image: url('/%E6%96%87%E6%A1%A3.png');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: cover;
+  margin-right: 4px;
+}
+
+/* ── About Page — "关于我"页面布局 ──────────────────────────
+ *  用法：<div class="about-page">内容...</div>
+ *  改这里换页面宽度、内边距、标题样式
+ * ─────────────────────────────────────────────────────────── */
+.about-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.about-page h2 {
+  margin-top: 40px;
+  margin-bottom: 16px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* 首个 h2 无顶部间距 */
+.about-page h2:first-child {
+  margin-top: 0;
+}

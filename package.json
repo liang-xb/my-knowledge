@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "构建Java后端核心知识体系",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +17,10 @@
   "dependencies": {
     "vitepress": "^1.6.4",
     "vue": "^3.5.34"
+  },
+  "devDependencies": {
+    "@types/dom-view-transitions": "^1.0.6",
+    "markdown-it-container": "^4.0.0",
+    "sharp": "^0.34.5"
   }
 }

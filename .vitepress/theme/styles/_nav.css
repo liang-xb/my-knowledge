@@ -1,0 +1,149 @@
+/* ============================================================
+ *  Nav — 导航栏、按钮、导航图标
+ *
+ *  包含：
+ *    1. 顶部导航栏（.VPNav）样式
+ *    2. 导航菜单链接 hover / focus 样式
+ *    3. .nav-icon 工具类（替代内联 style，统一管理图标尺寸）
+ *    4. Hero 区域按钮（.VPButton）样式
+ * ============================================================ */
+
+/* ── Navigation Bar ───────────────────────────────────────── */
+.VPNav {
+  border-bottom: 1px solid var(--site-panel-border);
+  background: var(--site-panel-bg);
+  position: relative;
+}
+
+/* backdrop-filter 仅在桌面端生效 ——
+ *  移动端 VPNavScreen（position: fixed）嵌套在 VPNav 内部，
+ *  backdrop-filter 会创建新的 containing block，
+ *  导致 VPNavScreen 相对于 VPNav 而非视口定位，从而不可见。
+ *  桌面端 VPNav 已由 VitePress 切换为 position: fixed，
+ *  且 VPNavScreen 在 768px+ 隐藏，不受影响。 */
+@media (min-width: 960px) {
+  .VPNav {
+    backdrop-filter: blur(20px) saturate(1.8);
+  }
+}
+
+/* 底部渐变光带 */
+.VPNav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(52, 120, 217, 0.12), transparent);
+  pointer-events: none;
+}
+
+.VPNavBar .container {
+  max-width: 1280px;
+}
+
+.VPNavBarTitle .title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* 导航菜单链接 — 统一圆角、字重、hover 过渡 */
+.VPNavBarMenuLink,
+.VPNavBarMenuGroup .button {
+  border-radius: var(--site-radius);
+  font-weight: 600;
+  transition: background var(--site-transition-fast), color var(--site-transition-fast);
+}
+
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuGroup .button:hover {
+  background: var(--vp-c-brand-soft);
+}
+
+/* 焦点可见性 — 键盘 Tab 导航时的轮廓样式（无障碍） */
+.VPNavBarMenuLink:focus-visible,
+.VPNavBarMenuGroup .button:focus-visible,
+.VPButton:focus-visible,
+.VPSidebarItem .link:focus-visible,
+.DocSearch-Button:focus-visible {
+  outline: 2px solid var(--vp-c-brand-2);
+  outline-offset: 3px;
+}
+
+/* ── Navigation Icon — 导航栏图标工具类 ──────────────────────
+ *  用法：<img src="xxx.png" class="nav-icon nav-icon--md">
+ *  尺寸变体：xs(1.0em) → 3xl(1.6em)，每级递增 0.1em
+ *  如需新增尺寸，在下方添加 .nav-icon--xxx 即可
+ * ──────────────────────────────────────────────────────────── */
+.nav-icon {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* 尺寸变体 — xs(1.0em) → 3xl(1.6em)，每级递增 0.1em */
+.nav-icon--xs  { width: 1.0em; height: 1.0em; }
+.nav-icon--sm  { width: 1.1em; height: 1.1em; }
+.nav-icon--md  { width: 1.2em; height: 1.2em; }
+.nav-icon--lg  { width: 1.3em; height: 1.3em; }
+.nav-icon--xl  { width: 1.4em; height: 1.4em; }
+.nav-icon--2xl { width: 1.5em; height: 1.5em; }
+.nav-icon--3xl { width: 1.6em; height: 1.6em; }
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.VPButton {
+  border-radius: var(--site-radius) !important;
+  font-weight: 700;
+  box-shadow: none !important;
+}
+
+/* 品牌按钮 — 蓝色渐变背景，改这里换首页按钮颜色 */
+.VPButton.brand {
+  border-color: transparent !important;
+  background: linear-gradient(135deg, #2962c4, #4a8fe6) !important; /* 改这里的两个色值 */
+  color: #fff !important;
+  box-shadow: var(--site-shadow-sm), 0 0 0 1px rgba(52, 120, 217, 0.24) !important;
+}
+
+.VPButton.brand:hover {
+  box-shadow: var(--site-shadow), 0 0 0 1px rgba(52, 120, 217, 0.32) !important;
+}
+
+/* 次要按钮 — 半透明面板背景 */
+.VPButton.alt {
+  border-color: var(--site-panel-border) !important;
+  background: var(--site-panel-bg) !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+/* Hero 区域按钮 — flex 布局居中，hover 上浮效果 */
+.VPHero .actions .VPButton {
+  display: inline-flex;
+  min-width: 120px;
+  height: 44px;
+  align-items: center;
+  padding: 0 20px !important;
+  justify-content: center;
+  font-size: 14.5px;
+  white-space: nowrap;
+  transition: transform var(--site-transition-fast), box-shadow var(--site-transition-fast);
+}
+
+.VPHero .actions .VPButton:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Dark Mode — 导航栏底部光带 ────────────────────────────── */
+.dark .VPNav::after {
+  background: linear-gradient(90deg, transparent, rgba(104, 116, 163, 0.1), transparent);
+}
+
+/* ── Dark Mode — 品牌按钮 ──────────────────────────────────── */
+.dark .VPButton.brand {
+  background: #6874a3 !important;
+  box-shadow: var(--site-shadow-sm), 0 0 0 1px rgba(104, 116, 163, 0.2) !important;
+}
+
+.dark .VPButton.brand:hover {
+  background: #7a86b5 !important;
+}
