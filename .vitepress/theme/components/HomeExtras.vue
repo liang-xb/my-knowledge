@@ -123,11 +123,11 @@ const friendLinks = [
     link: 'https://vitepress.dev',
   },
   {
-    name: 'Irai',
-    desc: '技术探索者，记录学习与生活',
-    icon: '🌐',
+    name: '牛客网',
+    desc: '面向程序员的求职刷题与面试备考平台',
+    icon: '🐮',
     color: '#0d9488',
-    link: 'http://iraionly.cn/',
+    link: 'https://www.nowcoder.com/',
   },
   {
     name: '代码随想录',
