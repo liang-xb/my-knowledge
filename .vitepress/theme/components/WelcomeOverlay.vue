@@ -19,7 +19,7 @@ const props = defineProps({
   /** 博客名称，显示在欢迎卡片中央 */
   blogName: {
     type: String,
-    default: 'Jackson 凌',
+    default: 'lxb',
   },
 })
 
