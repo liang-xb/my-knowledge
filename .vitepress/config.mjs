@@ -532,14 +532,6 @@ export default defineConfig({
                                     {
                                         collapsible: true,   // 允许折叠
                                         collapsed: false,    // 一开始就展开
-                                        text: '内容大纲', link: '/docs/Java/韩顺平Java课程大纲.md',
-                                    },
-                                    {
-                                        collapsible: true,   // 允许折叠
-                                        collapsed: false,    // 一开始就展开
-                                    {
-                                        collapsible: true,   // 允许折叠
-                                        collapsed: false,    // 一开始就展开
                                         text: '基本语法', items:
                                             [
                                                 ...setSidebarDefault('/docs/Java/第一阶段/基本语法'),
