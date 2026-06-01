@@ -160,11 +160,11 @@ export default defineConfig({
                                         text: '<img src="/my-knowledge/element-plus.png" class="nav-icon nav-icon--lg"> ElementPlus',
                                         link: '/docs/前端/ElementPlus/elementplus.md'
                                     },
-                                    {
-                                        text: '<img src="/my-knowledge/微信开发者工具.jpeg" class="nav-icon nav-icon--lg"> 微信小程序',
-                                        link: '/docs/前端/微信小程序/1. HttpClient.md'
-                                    },
                                 ]
+                        },
+                        {
+                            text: '🔗 API 对接',
+                            link: '/docs/前端/API对接/API对接.md'
                         },
                     ]
             },
@@ -829,13 +829,13 @@ export default defineConfig({
                                 ]
                         }
                     ],
-                '/docs/前端/微信小程序':
+                '/docs/前端/API对接':
                     [
                         {
-                            text: '微信小程序',
+                            text: 'API 对接',
                             items:
                                 [
-                                    ...setSidebarDefault('/docs/前端/微信小程序')
+                                    {text: '🔗 前后端对接', link: '/docs/前端/API对接/API对接'},
                                 ]
                         }
                     ],
