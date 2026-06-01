@@ -169,10 +169,10 @@ export default defineConfig({
                     ]
             },
             {
-                text: '<img src="/my-knowledge/java.png" class="nav-icon nav-icon--3xl"> Java', // 作为导航栏标识
-                items: // 传入 items 作为导航栏内容
+                text: '<img src="/my-knowledge/java.png" class="nav-icon nav-icon--3xl"> Java',
+                items:
                     [
-                        // 传入第一个字典
+                        {text: '🗺️ 学习路线', link: '/docs/Java/学习路线.md'},
                         {
                             text: '环境构建',
                             items:
@@ -186,14 +186,6 @@ export default defineConfig({
                                         link: '/docs/Java/IDEA/IDEA快捷键/IDEA快捷键.md',
                                     },
                                     {
-                                        text: '📝IDEA模板',
-                                        link: '/docs/Java/IDEA/IDEA模板/代码模板.md'
-                                    },
-                                    {
-                                        text: '<img src="/my-knowledge/eclipse.png" class="nav-icon nav-icon--3xl"> eclipse',
-                                        link: '/docs/Java/eclipse/eclipse使用教程.md'
-                                    },
-                                    {
                                         text: '<img src="/my-knowledge/maven.png" class="nav-icon nav-icon--3xl"> Maven',
                                         link: '/docs/Java/Maven/maven.md',
                                     },
@@ -202,29 +194,20 @@ export default defineConfig({
                         {
                             text: '📝JavaSE',
                             items: [
-                                {text: '第一阶段', link: '/docs/Java/第一阶段/基本语法/1.概述.md'},
-                                {text: '第二阶段', link: '/docs/Java/第二阶段/面向对象高级/57.类变量.md'},
-                                {text: '第三阶段', link: '/docs/Java/第三阶段/网络编程/98.网络的基本概念.md'},
+                                {text: 'Java基础', link: '/docs/Java/第一阶段/基本语法/1.概述.md'},
+                                {text: '进阶提升', link: '/docs/Java/第二阶段/面向对象高级/57.类变量.md'},
+                                {text: 'Java高级', link: '/docs/Java/第三阶段/网络编程/98.网络的基本概念.md'},
                                 {text: 'Java8', link: '/docs/Java/Java8/1. 基本介绍.md'},
                                 {text: '单元测试', link: '/docs/Java/单元测试/单元测试.md'},
                             ]
                         },
                         {
-                            text: '💯章节练习题',
+                            text: '📋 基础速查',
                             items:
                                 [
-                                    {
-                                        text: '第一阶段',
-                                        link: '/docs/Java/章节作业/第一阶段/第三章：变量/第三章作业.md'
-                                    },
-                                    {
-                                        text: '第二阶段',
-                                        link: '/docs/Java/章节作业/第二阶段/第十九章：IO流/第十九章作业.md'
-                                    },
-                                    {
-                                        text: '第三阶段',
-                                        link: '/docs/Java/章节作业/第三阶段/第二十一章：网络编程/第二十一章作业.md'
-                                    },
+                                    {text: '常用 API', link: '/docs/Java/基础速查/常用API.md'},
+                                    {text: '面向对象核心概念', link: '/docs/Java/基础速查/面向对象.md'},
+                                    {text: '异常与日志', link: '/docs/Java/基础速查/异常与日志.md'},
                                 ]
                         },
                     ]
@@ -554,8 +537,6 @@ export default defineConfig({
                                     {
                                         collapsible: true,   // 允许折叠
                                         collapsed: false,    // 一开始就展开
-                                        text: '学习方法', link: '/docs/Java/学习方法.md',
-                                    },
                                     {
                                         collapsible: true,   // 允许折叠
                                         collapsed: false,    // 一开始就展开
@@ -728,94 +709,25 @@ export default defineConfig({
                     ],
 
                 // Java章节作业三个阶段
-                '/docs/Java/章节作业/第一阶段':
+                '/docs/Java/学习路线':
                     [
                         {
-                            text: '第一阶段',
+                            text: 'Java 学习路线',
                             items:
                                 [
-                                    {
-                                        text: '第三章: 变量',
-                                        link: '/docs/Java/章节作业/第一阶段/第三章：变量/第三章作业.md'
-                                    },
-                                    {
-                                        text: '第四章: 运算符',
-                                        link: '/docs/Java/章节作业/第一阶段/第四章：运算符/第四章作业.md'
-                                    },
-                                    {
-                                        text: '第五章: 程序控制结构',
-                                        link: '/docs/Java/章节作业/第一阶段/第五章：程序控制结构/第五章作业.md'
-                                    },
-                                    {
-                                        text: '第六章: 数组',
-                                        link: '/docs/Java/章节作业/第一阶段/第六章：数组/第六章作业.md'
-                                    },
-                                    {
-                                        text: '第七章: 面向对象基础',
-                                        link: '/docs/Java/章节作业/第一阶段/第七章：面向对象基础/第七章作业.md'
-                                    },
-                                    {
-                                        text: '第八章: 面向对象中级',
-                                        link: '/docs/Java/章节作业/第一阶段/第八章：面向对象中级/第八章作业.md'
-                                    },
+                                    {text: '🗺️ 学习路线', link: '/docs/Java/学习路线'},
                                 ]
-                        },
+                        }
                     ],
-                '/docs/Java/章节作业/第二阶段':
+                '/docs/Java/基础速查':
                     [
                         {
-                            text: '第二阶段',
+                            text: '基础速查',
                             items:
                                 [
-                                    {
-                                        text: '第十章: 面向对象高级',
-                                        link: '/docs/Java/章节作业/第二阶段/第十章：面向对象高级/第十章作业.md'
-                                    },
-                                    {
-                                        text: '第十二章: 异常',
-                                        link: '/docs/Java/章节作业/第二阶段/第十二章：异常/第十二章作业,.md'
-                                    },
-                                    {
-                                        text: '第十三章: 常用类',
-                                        link: '/docs/Java/章节作业/第二阶段/第十三章：常用类/第十三章作业.md'
-                                    },
-                                    {
-                                        text: '第十四章: 集合',
-                                        link: '/docs/Java/章节作业/第二阶段/第十四章：集合/第十四章作业.md'
-                                    },
-                                    {
-                                        text: '第十五章: 泛型',
-                                        link: '/docs/Java/章节作业/第二阶段/第十五章：泛型/第十五章作业.md'
-                                    },
-                                    {
-                                        text: '第十六章: 多线程',
-                                        link: '/docs/Java/章节作业/第二阶段/第十七章：多线程/第十七章作业.md'
-                                    },
-                                    {
-                                        text: '第十九章: IO流',
-                                        link: '/docs/Java/章节作业/第二阶段/第十九章：IO流/第十九章作业.md'
-                                    }
-                                ]
-                        },
-                    ],
-                '/docs/Java/章节作业/第三阶段':
-                    [
-                        {
-                            text: '第三阶段',
-                            items:
-                                [
-                                    {
-                                        text: '第二十一章: 网络编程',
-                                        link: '/docs/Java/章节作业/第三阶段/第二十一章：网络编程/第二十一章作业.md'
-                                    },
-                                    {
-                                        text: '第二十三章：反射',
-                                        link: '/docs/Java/章节作业/第三阶段/第二十三章：反射/第二十三章作业.md'
-                                    },
-                                    {
-                                        text: '第二十七章：正则表达式',
-                                        link: '/docs/Java/章节作业/第三阶段/第二十七章：正则表达式/第二十七章作业.md'
-                                    },
+                                    {text: '常用 API', link: '/docs/Java/基础速查/常用API'},
+                                    {text: '面向对象核心概念', link: '/docs/Java/基础速查/面向对象'},
+                                    {text: '异常与日志', link: '/docs/Java/基础速查/异常与日志'},
                                 ]
                         }
                     ],
