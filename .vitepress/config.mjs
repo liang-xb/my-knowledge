@@ -90,16 +90,9 @@ export default defineConfig({
             {
                 text: '⭐算法', items:
                     [
-                        {text: '📝 算法集锦', link: '/docs/算法/算法集锦/算法集锦'},
                         {
-                            text: '<img src="/my-knowledge/leetcode.png" class="nav-icon nav-icon--xs"> 灵神题单',
-                            link: '/docs/算法/灵神题单/网格图/一、网格图DFS/1. LeetCode 200.md'
-                        },
-                        {text: '🎉 蓝桥杯', link: '/docs/算法/蓝桥杯/JavaB组省赛/0. 导论.md'},
-                        {text: '🎯 左程云 ', link: '/docs/算法/左程云/0. 导论.md'},
-                        {
-                            text: '<img src="/my-knowledge/java深色.png" class="nav-icon nav-icon--3xl"> 数据结构',
-                            link: '/docs/算法/数据结构/Java/马踏棋盘算法.md'
+                            text: '<img src="/my-knowledge/leetcode.png" class="nav-icon nav-icon--xs"> LeetCode',
+                            link: '/docs/算法/LeetCode/Hot100.md'
                         },
                         {
                             text: '代码随想录', items:
@@ -109,6 +102,11 @@ export default defineConfig({
                                     {text: '题目汇总', link: '/docs/算法/代码随想录/题目汇总.md'},
                                 ]
                         },
+                        {
+                            text: '<img src="/my-knowledge/java深色.png" class="nav-icon nav-icon--3xl"> 数据结构',
+                            link: '/docs/算法/数据结构/Java/马踏棋盘算法.md'
+                        },
+                        {text: '📝 算法集锦', link: '/docs/算法/算法集锦/算法集锦'},
                     ]
             },
             {
@@ -331,58 +329,6 @@ export default defineConfig({
                     ]
             },
             {
-                text: '🚀项目',
-                items:
-                    [
-                        {
-                            text: 'Tlias 智能学习辅助系统',
-                            items:
-                                [
-                                    {
-                                        text: '后端模块',
-                                        link: '/docs/项目/Tlias智能学习辅助系统/后端模块/1. 项目介绍.md'
-                                    },
-                                    {
-                                        text: '前端模块',
-                                        link: '/docs/项目/Tlias智能学习辅助系统/前端模块/1. 页面基本结构.md'
-                                    },
-                                    {
-                                        text: '项目部署',
-                                        link: '/docs/项目/Tlias智能学习辅助系统/项目部署/Linux 部署/1. 前端部署.md'
-                                    }
-                                ]
-                        },
-                        {
-                            text: '苍穹外卖',
-                            items:
-                                [
-                                    {
-                                        text: '项目介绍',
-                                        link: '/docs/项目/苍穹外卖/项目介绍/数据库设计文档.md'
-                                    },
-                                    {
-                                        text: '后端模块',
-                                        link: '/docs/项目/苍穹外卖/后端模块/Day 2/1. 新增员工.md'
-                                    },
-                                ]
-                        },
-                        {
-                            text: '中州养老',
-                            items:
-                                [
-                                    {
-                                        text: '项目介绍',
-                                        link: '/docs/项目/中州养老/项目介绍/Day1/1. 项目介绍.md'
-                                    },
-                                    {
-                                        text: '后端模块',
-                                        link: '/docs/测试界面.md'
-                                    },
-                                ]
-                        },
-                    ]
-            },
-            {
                 text: '🤖AI',
                 items:
                     [
@@ -572,81 +518,13 @@ export default defineConfig({
                                 ]
                         }
                     ],
-                '/docs/算法/蓝桥杯':
+                '/docs/算法/LeetCode':
                     [
                         {
-                            collapsible: true,   // 允许折叠
-                            collapsed: false,    // 一开始就展开
-                            text: '常用归纳',
+                            text: 'LeetCode',
                             items:
                                 [
-                                    ...setSidebarDefault('/docs/算法/蓝桥杯/常用归纳')
-                                ]
-                        },
-                        {
-                            collapsible: true,   // 允许折叠
-                            collapsed: false,    // 一开始就展开
-                            text: '真题分析',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/算法/蓝桥杯/真题分析')
-                                ]
-                        },
-                        {
-                            collapsible: true,   // 允许折叠
-                            collapsed: false,    // 一开始就展开
-                            text: 'Java B组省赛真题',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/算法/蓝桥杯/JavaB组省赛')
-                                ]
-                        },
-                        {
-                            collapsible: true,   // 允许折叠
-                            collapsed: false,    // 一开始就展开
-                            text: 'Java B组国赛真题',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/算法/蓝桥杯/JavaB组国赛')
-                                ]
-                        }
-                    ],
-                '/docs/算法/左程云':
-                    [
-                        {
-                            collapsible: true,   // 允许折叠
-                            collapsed: false,    // 一开始就展开
-                            text: '左程云算法',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/算法/左程云'),
-                                ]
-                        }
-                    ],
-                '/docs/算法/灵神题单':
-                    [
-                        {
-                            text: '灵神题单',
-                            items:
-                                [
-                                    {
-                                        collapsible: true,   // 允许折叠
-                                        collapsed: false,    // 一开始就展开
-                                        text: '编程入门题单',
-                                        items:
-                                            [
-                                                ...setSidebarDefault('/docs/算法/灵神题单/编程入门题单'),
-                                            ]
-                                    },
-                                    {
-                                        collapsible: true,   // 允许折叠
-                                        collapsed: false,    // 一开始就展开
-                                        text: '网格图',
-                                        items:
-                                            [
-                                                ...setSidebarDefault('/docs/算法/灵神题单/网格图'),
-                                            ]
-                                    },
+                                    {text: '🔥 Hot 100', link: '/docs/算法/LeetCode/Hot100'},
                                 ]
                         }
                     ],
@@ -1133,101 +1011,6 @@ export default defineConfig({
                             items:
                                 [
                                     ...setSidebarDefault("/docs/后端/DevOps/Docker")
-                                ]
-                        }
-                    ],
-                '/docs/项目/Tlias智能学习辅助系统/后端模块':
-                    [
-                        {
-                            text: 'Tlias项目-后端模块',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/项目/Tlias智能学习辅助系统/后端模块')
-                                ]
-                        }
-                    ],
-                '/docs/项目/Tlias智能学习辅助系统/前端模块':
-                    [
-                        {
-                            text: 'Tlias项目-前端模块',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/项目/Tlias智能学习辅助系统/前端模块')
-                                ]
-                        }
-                    ],
-                '/docs/项目/Tlias智能学习辅助系统/项目部署':
-                    [
-                        {
-                            text: 'Tlias项目部署',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/项目/Tlias智能学习辅助系统/项目部署')
-                                ]
-                        }
-                    ],
-                '/docs/项目/苍穹外卖/项目介绍':
-                    [
-                        {
-                            text: '苍穹外卖-项目介绍',
-                            items:
-                                [
-                                    {
-                                        text: '初始化SQL脚本',
-                                        link: '/docs/项目/苍穹外卖/项目介绍/初始化SQL脚本.md'
-                                    },
-                                    {
-                                        text: '数据库设计文档',
-                                        link: '/docs/项目/苍穹外卖/项目介绍/数据库设计文档.md'
-                                    },
-                                    {
-                                        text: 'Day 1',
-                                        items:
-                                            [
-                                                ...setSidebarDefault('/docs/项目/苍穹外卖/项目介绍/Day 1')
-                                            ]
-                                    }
-
-                                ]
-                        }
-                    ],
-                '/docs/项目/苍穹外卖/后端模块':
-                    [
-                        {
-                            text: '苍穹外卖-后端模块',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/项目/苍穹外卖/后端模块')
-                                ]
-                        }
-                    ],
-                '/docs/项目/苍穹外卖/前端模块':
-                    [
-                        {
-                            text: '苍穹外卖-前端模块',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/项目/苍穹外卖/前端模块')
-                                ]
-                        }
-                    ],
-                '/docs/项目/中州养老/项目介绍':
-                    [
-                        {
-                            text: '中州养老-项目介绍',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/项目/中州养老/项目介绍')
-                                ]
-                        }
-                    ],
-                '/docs/项目/中州养老/后端模块':
-                    [
-                        {
-                            text: '中州养老-后端模块',
-                            items:
-                                [
-                                    ...setSidebarDefault('/docs/项目/中州养老/后端模块')
                                 ]
                         }
                     ],
