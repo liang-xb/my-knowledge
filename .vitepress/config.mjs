@@ -83,23 +83,7 @@ export default defineConfig({
                                 ]
                         },
                         {text: '🔍常用网站', link: '/docs/笔记/常用网站.md'},
-                        {text: '🖊️随笔', link: '/docs/笔记/随笔/随笔乱记.md'},
                         {text: '🎯八股文', link: '/docs/笔记/八股文/0. 八股来源.md'},
-
-                        {
-                            text: 'Vitepress',
-                            items:
-                                [
-                                    {
-                                        text: '📋准备工作',
-                                        link: '/docs/测试界面.md'
-                                    },
-                                    {
-                                        text: '<img src="/my-knowledge/腾讯云.png" class="nav-icon nav-icon--xs"> 腾讯云部署',
-                                        link: '/docs/笔记/vitepress教程/腾讯云部署/腾讯云部署.md'
-                                    },
-                                ]
-                        },
 
                     ]
             },
