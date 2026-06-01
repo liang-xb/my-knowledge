@@ -85,7 +85,7 @@ export default defineConfig({
                         {text: '🔍常用网站', link: '/docs/笔记/常用网站.md'},
                         {text: '🖊️随笔', link: '/docs/笔记/随笔/随笔乱记.md'},
                         {text: '🎯八股文', link: '/docs/笔记/八股文/0. 八股来源.md'},
-                        {text: '📝面试复盘', link: '/docs/笔记/面试复盘/面试复盘.md'},
+
                         {
                             text: 'Vitepress',
                             items:
@@ -456,39 +456,6 @@ export default defineConfig({
                         },
                         {text: '🐍爬虫', link: '/docs/Python/爬虫/基本介绍.md'},
                         {text: '🤖网页自动化', link: '/docs/测试界面.md'},
-                    ]
-            },
-            {
-                text: '408',
-                items:
-                    [
-                        {
-                            text: '数学', items:
-                                [
-                                    {text: '高等数学', link: '/docs/测试界面.md'},
-                                    {text: '线性代数', link: '/docs/测试界面.md'},
-                                    {text: '概率论', link: '/docs/测试界面.md'},
-                                ]
-                        },
-                        {
-                            text: '专业课',
-                            items:
-                                [
-                                    {text: '数据结构', link: '/docs/测试界面.md'},
-                                    {text: '计算机组原理', link: '/docs/测试界面.md'},
-                                    {text: '操作系统', link: '/docs/测试界面.md'},
-                                    {text: '计算机网络', link: '/docs/测试界面.md'},
-                                ]
-                        },
-                        {
-                            text: 'C/C++', items:
-                                [
-                                    {
-                                        text: '<img src="/my-knowledge/clion.png" class="nav-icon nav-icon--lg"> Clion',
-                                        link: '/docs/测试界面.md'
-                                    },
-                                ]
-                        },
                     ]
             },
 
