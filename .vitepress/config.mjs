@@ -250,6 +250,13 @@ export default defineConfig({
                                 ]
                         },
                         {
+                            text: '📦 项目实战',
+                            items:
+                                [
+                                    {text: '苍穹外卖', link: '/docs/后端/项目实战/苍穹外卖.md'},
+                                ]
+                        },
+                        {
                             text: "微服务",
                             items:
                                 [
@@ -887,6 +894,16 @@ export default defineConfig({
                                     ...setSidebarDefault("/docs/后端/项目笔记/工具与配置")
                                 ]
                         },
+                    ],
+                '/docs/后端/项目实战':
+                    [
+                        {
+                            text: '项目实战',
+                            items:
+                                [
+                                    {text: '📦 苍穹外卖', link: '/docs/后端/项目实战/苍穹外卖'},
+                                ]
+                        }
                     ],
                 '/docs/后端/Spring':
                     [
