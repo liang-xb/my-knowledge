@@ -270,7 +270,7 @@ export default defineConfig({
                                     },
                                     {
                                         text: '<img src="/my-knowledge/rabbitmq.png" class="nav-icon nav-icon--xs"> RabbitMQ',
-                                        link: '/docs/测试界面.md'
+                                        link: '/docs/后端/微服务/RabbitMQ/1. RabbitMQ 消息中间件.md'
                                     },
                                     {
                                         text: '<img src="/my-knowledge/elasticsearch.png" class="nav-icon nav-icon--xs"> Elasticsearch',
