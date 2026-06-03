@@ -266,7 +266,7 @@ export default defineConfig({
                                     },
                                     {
                                         text: '<img src="/my-knowledge/springcloud.png" class="nav-icon nav-icon--xs"> SpringCloud',
-                                        link: '/docs/测试界面.md'
+                                        link: '/docs/后端/SpringCloud/1. SpringCloud 微服务基础.md'
                                     },
                                     {
                                         text: '<img src="/my-knowledge/rabbitmq.png" class="nav-icon nav-icon--xs"> RabbitMQ',
