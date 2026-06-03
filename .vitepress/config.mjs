@@ -338,10 +338,6 @@ export default defineConfig({
                             text: 'Ollama',
                             link: '/docs/AI/Ollama/ollama.md'
                         },
-                        {
-                            text: 'ROS2（AIC大赛）',
-                            link: '/docs/AI/ROS2/ros2.md'
-                        },
                     ]
             },
             {
