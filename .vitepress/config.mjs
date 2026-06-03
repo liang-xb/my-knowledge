@@ -274,7 +274,7 @@ export default defineConfig({
                                     },
                                     {
                                         text: '<img src="/my-knowledge/elasticsearch.png" class="nav-icon nav-icon--xs"> Elasticsearch',
-                                        link: '/docs/测试界面.md'
+                                        link: '/docs/后端/微服务/Elasticsearch/1. Elasticsearch 搜索引擎.md'
                                     },
                                 ]
 
