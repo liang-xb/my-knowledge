@@ -332,7 +332,7 @@ export default defineConfig({
                         },
                         {
                             text: 'LangChain4j',
-                            link: '/docs/测试界面.md'
+                            link: '/docs/AI/LangChain4j/langchain4j.md'
                         },
                         {
                             text: 'Ollama',
