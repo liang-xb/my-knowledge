@@ -354,7 +354,7 @@ export default defineConfig({
                                 [
                                     {
                                         text: '<img src="/my-knowledge/numpy.png" class="nav-icon nav-icon--md"> NumPy',
-                                        link: '/docs/测试界面.md'
+                                        link: '/docs/Python/NumPy/NumPy.md'
                                     },
                                     {
                                         text: '<img src="/my-knowledge/pandas.png" class="nav-icon nav-icon--xs"> Pandas',
