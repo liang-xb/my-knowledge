@@ -348,7 +348,7 @@ export default defineConfig({
                             text: '<img src="/my-knowledge/pycharm.png" class="nav-icon nav-icon--lg"> Pycharm',
                             link: '/docs/Python/PyCharm/文章/1.python解释器安装.md'
                         },
-                        {text: '📝基础语法', link: '/docs/测试界面.md'},
+                        {text: '📝基础语法', link: '/docs/Python/基础语法/基础语法.md'},
                         {
                             text: '📊数据分析', items:
                                 [
