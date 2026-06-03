@@ -358,7 +358,7 @@ export default defineConfig({
                                     },
                                     {
                                         text: '<img src="/my-knowledge/pandas.png" class="nav-icon nav-icon--xs"> Pandas',
-                                        link: '/docs/测试界面.md'
+                                        link: '/docs/Python/Pandas/Pandas.md'
                                     },
                                     {
                                         text: '<img src="/my-knowledge/matplotlib.png" class="nav-icon nav-icon--md"> Matplotlib',
