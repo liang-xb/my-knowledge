@@ -287,10 +287,6 @@ export default defineConfig({
                                         text: '<img src="/my-knowledge/设计模式.png" class="nav-icon nav-icon--md">  设计模式',
                                         link: '/docs/后端/设计模式/工厂模式.md'
                                     },
-                                    {
-                                        text: '📝 项目笔记',
-                                        link: "/docs/后端/项目笔记/解决方案/1. 权限认证.md"
-                                    }
                                 ]
                         },
                         {
@@ -841,27 +837,6 @@ export default defineConfig({
                                     ...setSidebarDefault('/docs/后端/设计模式'),
                                 ]
                         }
-                    ],
-                '/docs/后端/项目笔记':
-                    [
-                        {
-                            collapsible: true,   // 允许折叠
-                            collapsed: false,    // 一开始就展开
-                            text: "解决方案",
-                            items:
-                                [
-                                    ...setSidebarDefault("/docs/后端/项目笔记/解决方案")
-                                ]
-                        },
-                        {
-                            collapsible: true,   // 允许折叠
-                            collapsed: false,    // 一开始就展开
-                            text: "工具与配置",
-                            items:
-                                [
-                                    ...setSidebarDefault("/docs/后端/项目笔记/工具与配置")
-                                ]
-                        },
                     ],
                 '/docs/后端/项目实战':
                     [
