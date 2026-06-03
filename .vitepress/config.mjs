@@ -362,7 +362,7 @@ export default defineConfig({
                                     },
                                     {
                                         text: '<img src="/my-knowledge/matplotlib.png" class="nav-icon nav-icon--md"> Matplotlib',
-                                        link: '/docs/测试界面.md'
+                                        link: '/docs/Python/Matplotlib/Matplotlib.md'
                                     },
                                 ]
                         },
