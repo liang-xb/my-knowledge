@@ -367,7 +367,7 @@ export default defineConfig({
                                 ]
                         },
                         {text: '🐍爬虫', link: '/docs/Python/爬虫/基本介绍.md'},
-                        {text: '🤖网页自动化', link: '/docs/测试界面.md'},
+                        {text: '🤖网页自动化', link: '/docs/Python/网页自动化/网页自动化.md'},
                     ]
             },
 
