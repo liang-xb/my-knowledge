@@ -22,7 +22,7 @@ export default defineConfig({
     // README.md 是给 GitHub 看的，不参与 VitePress 构建
     srcExclude: ['README.md'],
     head: [
-        ['link', {rel: 'icon', href: "/my-knowledge/标签logo.png"}],
+        ['link', {rel: 'icon', href: "/标签logo.png"}],
         ['script', {}, `
           (function(){
             var p=location.pathname;
@@ -56,7 +56,7 @@ export default defineConfig({
         aside: false, // 禁用 On this page 属性
 
         siteTitle: '知识文档站', // 左上角导航栏名称
-        logo: '/my-knowledge/标签logo.png', // 左上角导航栏图标
+        logo: '/标签logo.png', // 左上角导航栏图标
         /* ── 导航栏配置 ────────────────────────────────────────────
          *  添加顶级导航：在 nav 数组末尾添加新对象
          *  图标用法：<img src="/xxx.png" class="nav-icon nav-icon--md">
