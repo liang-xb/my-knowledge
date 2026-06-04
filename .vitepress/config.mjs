@@ -36,6 +36,14 @@ export default defineConfig({
           html.welcome-blocking body {
             background: #0d1321 !important;
           }
+
+          .VPHero .image-container {
+            max-width: 420px !important;
+          }
+          .VPHero .image-container .VPImage {
+            max-width: 420px !important;
+            max-height: 420px !important;
+          }
         `],
     ],
 
