@@ -34,15 +34,7 @@ export default defineConfig({
         ['style', {}, `
           html.welcome-blocking,
           html.welcome-blocking body {
-            background: #0d1321 !important;
-          }
-
-          .VPHero .image-container {
-            max-width: 420px !important;
-          }
-          .VPHero .image-container .VPImage {
-            max-width: 420px !important;
-            max-height: 420px !important;
+            background: #1e293b !important;
           }
         `],
     ],
@@ -1005,9 +997,9 @@ export default defineConfig({
      * ──────────────────────────────────────────────────────────── */
     markdown:
         {
-            // 代码块双主题：亮色 github-light，暗色 one-dark-pro
+            // 代码块双主题：默认 one-dark-pro（暗色基底），暗色模式也 one-dark-pro
             theme: {
-                light: 'github-light',
+                light: 'one-dark-pro',
                 dark: 'one-dark-pro',
             },
 

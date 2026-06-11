@@ -1,11 +1,7 @@
 /* ============================================================
- *  Base — 全局基础样式
- *
- *  作用范围：html、body 级别的全局重置与过渡配置。
- *  本文件不包含任何组件级样式，仅设置全局基线。
+ *  Base — 全局基础样式（清晰可读版暗黑极客风）
  * ============================================================ */
 
-/* 锚点滚动偏移 — 点击目录链接时，标题不被导航栏遮挡 */
 html {
   scroll-padding-top: calc(var(--vp-nav-height) + 16px);
   transition:
@@ -16,12 +12,15 @@ html {
 
 body {
   background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
   text-rendering: optimizeLegibility;
   -webkit-font-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(52, 120, 217, 0.12);
+  -webkit-tap-highlight-color: rgba(56, 189, 248, 0.08);
+  /* 为侧边代码雨装饰预留叠加上下文 */
+  position: relative;
 }
 
-/* 主题切换平滑过渡 — 覆盖所有可能变色的根级容器 */
+/* 主题切换平滑过渡 */
 html,
 body,
 .VPNav,
@@ -35,13 +34,13 @@ body,
     border-color var(--site-transition-slow);
 }
 
-/* 文本选择样式 — 品牌色高亮选中文本 */
+/* 文本选择样式 — 荧光蓝高亮 */
 ::selection {
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
+  background: rgba(56, 189, 248, 0.2);
+  color: #e2e8f0;
 }
 
-/* 精致滚动条 */
+/* 精致滚动条 — 暗色 */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -49,10 +48,81 @@ body,
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(15, 23, 42, 0.12);
+  background: rgba(56, 189, 248, 0.12);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(15, 23, 42, 0.2);
+  background: rgba(56, 189, 248, 0.22);
 }
 
+/* ── Side Code Rain — 页面两侧二进制/代码字符雨暗纹 ──────────
+ *   仅装饰左右边缘 ~48px 窄列，不影响中间主体内容
+ *   固定定位，随滚动保持位置，12% 低透明度
+ *   使用 body 伪元素避免增加 DOM 节点
+ * ──────────────────────────────────────────────────────────── */
+
+/* 左侧代码雨 — pre-line 自动换行填满侧边窄列 */
+body::before {
+  content: '01 10 00 11 <> {} // ** && || >> << 01 10 00 11 <> {} // ** && || >> << 01 10 00 11 <> {} // ** && || >> << 01 10 00 11 <> {} // ** && || >> << 01 10 00 11 <> {} // ** && || >> << 01 10 00 11 <> {} // ** && || >> <<';
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 100vh;
+  overflow: hidden;
+  white-space: pre-line;
+  word-break: break-all;
+  font-family: Consolas, var(--vp-font-family-mono), monospace;
+  font-size: 11px;
+  line-height: 1.8;
+  color: rgba(56, 189, 248, 0.12);
+  pointer-events: none;
+  z-index: 99;
+  text-align: left;
+  padding: 16px 6px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* 右侧代码雨 — 不同字符序列，与左侧形成差异 */
+body::after {
+  content: '10 01 11 00 /** **/ == != => <= 10 01 11 00 /** **/ == != => <= 10 01 11 00 /** **/ == != => <= 10 01 11 00 /** **/ == != => <= 10 01 11 00 /** **/ == != => <= 10 01 11 00 /** **/ == != => <=';
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 48px;
+  height: 100vh;
+  overflow: hidden;
+  white-space: pre-line;
+  word-break: break-all;
+  font-family: Consolas, var(--vp-font-family-mono), monospace;
+  font-size: 11px;
+  line-height: 1.8;
+  color: rgba(56, 189, 248, 0.12);
+  pointer-events: none;
+  z-index: 99;
+  text-align: right;
+  padding: 16px 6px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* 确保 VitePress Home 组件不覆盖侧边代码雨 */
+.VPHome {
+  position: relative;
+  z-index: 1;
+}
+
+/* 暗色模式 — 更深基底，代码雨透明度保持一致 */
+.dark body::before,
+.dark body::after {
+  color: rgba(56, 189, 248, 0.1);
+}
+
+/* 移动端 — 隐藏侧边代码雨，避免与小屏内容重叠 */
+@media (max-width: 959px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+}

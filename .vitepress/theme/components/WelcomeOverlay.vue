@@ -171,7 +171,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0d1321;
+  background: #1e293b;
   animation: overlay-in 0.5s ease-out both;
 }
 

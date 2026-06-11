@@ -26,7 +26,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, var(--vp-c-brand-1), rgba(52, 120, 217, 0.3));
+  background: linear-gradient(180deg, var(--vp-c-brand-1), rgba(56, 189, 248, 0.2));
   border-radius: 1px;
 }
 
@@ -70,7 +70,7 @@
   height: 14px;
   border-radius: 50%;
   background: var(--vp-c-brand-1);
-  box-shadow: 0 0 0 4px var(--vp-c-bg), 0 0 0 5px rgba(52, 120, 217, 0.2);
+  box-shadow: 0 0 0 4px var(--vp-c-bg), 0 0 0 5px rgba(56, 189, 248, 0.15);
   z-index: 2;
   transition: transform var(--site-transition-fast), box-shadow var(--site-transition-fast);
 }
@@ -78,7 +78,7 @@
 /* 圆点 hover 脉冲 */
 .site-timeline p:has(> strong:first-child:last-child):hover::before {
   transform: translateY(-50%) scale(1.15);
-  box-shadow: 0 0 0 4px var(--vp-c-bg), 0 0 0 6px rgba(52, 120, 217, 0.3);
+  box-shadow: 0 0 0 4px var(--vp-c-bg), 0 0 0 6px rgba(56, 189, 248, 0.22);
 }
 
 /* ── 内容卡片 — 改这里换卡片背景、圆角、阴影 ─────────────── */
@@ -116,7 +116,7 @@
 .site-timeline p:not(:has(> strong:first-child:last-child)):hover {
   transform: translateY(-2px);
   box-shadow: var(--site-card-shadow-hover);
-  border-color: rgba(52, 120, 217, 0.12);
+  border-color: rgba(56, 189, 248, 0.1);
 }
 
 /* 卡片内链接 */
@@ -138,7 +138,7 @@
 }
 
 .dark .site-timeline::before {
-  background: linear-gradient(180deg, var(--vp-c-brand-1), rgba(104, 116, 163, 0.2));
+  background: linear-gradient(180deg, var(--vp-c-brand-1), rgba(56, 189, 248, 0.15));
 }
 
 .dark .site-timeline p:has(> strong:first-child:last-child) {
@@ -147,11 +147,11 @@
 
 .dark .site-timeline p:has(> strong:first-child:last-child)::before {
   background: var(--vp-c-brand-1);
-  box-shadow: 0 0 0 4px var(--vp-c-bg), 0 0 0 5px rgba(104, 116, 163, 0.2);
+  box-shadow: 0 0 0 4px var(--vp-c-bg), 0 0 0 5px rgba(56, 189, 248, 0.12);
 }
 
 .dark .site-timeline p:not(:has(> strong:first-child:last-child)):hover {
-  border-color: rgba(104, 116, 163, 0.15);
+  border-color: rgba(56, 189, 248, 0.1);
 }
 
 /* ── 移动端 ───────────────────────────────────────────────── */

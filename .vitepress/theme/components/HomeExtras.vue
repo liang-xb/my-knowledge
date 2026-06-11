@@ -624,8 +624,8 @@ function onIconError(e) {
   gap: 14px;
   padding: 20px 22px;
   border-radius: var(--site-card-radius);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  background: #273449;
   backdrop-filter: blur(20px) saturate(1.5);
   -webkit-backdrop-filter: blur(20px) saturate(1.5);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
@@ -635,8 +635,8 @@ function onIconError(e) {
 
 .tip-card-wrapper:hover .tip-card {
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.1);
+  border-color: rgba(56, 189, 248, 0.18);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .tip-icon-plate {
@@ -703,8 +703,8 @@ function onIconError(e) {
   align-items: center;
   padding: 0 20px 20px;
   border-radius: var(--site-card-radius);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(56, 189, 248, 0.08);
+  background: #273449;
   backdrop-filter: blur(20px) saturate(1.5);
   -webkit-backdrop-filter: blur(20px) saturate(1.5);
   text-decoration: none;
@@ -718,8 +718,8 @@ function onIconError(e) {
 
 .friend-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.14);
+  border-color: rgba(56, 189, 248, 0.15);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
 }
 
 /* 顶部渐变装饰条（高度固定，避免触发布局重排） */
@@ -870,7 +870,7 @@ function onIconError(e) {
 
 /* ── 左右箭头 ───────────────────────────────────────────── */
 .carousel-arrow {
-  --site-arrow-active-border: rgba(52, 120, 217, 0.3);
+  --site-arrow-active-border: rgba(56, 189, 248, 0.2);
   position: absolute;
   /* 自定义修改：调整箭头位置，使其与轮播卡片视觉中心对齐 */
   top: 100px;
@@ -894,7 +894,7 @@ function onIconError(e) {
 
 .carousel-arrow:hover {
   background: var(--vp-c-brand-soft);
-  border-color: rgba(52, 120, 217, 0.2);
+  border-color: rgba(56, 189, 248, 0.15);
   color: var(--vp-c-brand-1);
 }
 
@@ -945,14 +945,14 @@ function onIconError(e) {
 }
 
 .carousel-card.is-focused .category-block {
-  box-shadow: 0 20px 60px rgba(52, 120, 217, 0.25),
-              0 8px 32px rgba(15, 23, 42, 0.15);
-  border-color: rgba(52, 120, 217, 0.3);
+  box-shadow: 0 0 32px rgba(56, 189, 248, 0.15),
+              0 8px 32px rgba(0, 0, 0, 0.2);
+  border-color: rgba(56, 189, 248, 0.2);
 }
 
 .carousel-card:not(.is-focused):hover .category-block {
-  box-shadow: 0 12px 40px rgba(52, 120, 217, 0.15);
-  border-color: rgba(52, 120, 217, 0.12);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.1);
 }
 
 /* 内层卡片 */
@@ -1294,13 +1294,13 @@ function onIconError(e) {
 <style>
 /* ── Dark mode — 暗色模式适配（非 scoped，覆盖硬编码色值） ── */
 .dark .tip-card {
-  background: rgba(31, 31, 35, 0.65);
-  border-color: rgba(161, 161, 170, 0.06);
+  background: #1a2435;
+  border-color: rgba(56, 189, 248, 0.04);
 }
 
 .dark .tip-card-wrapper:hover .tip-card {
-  border-color: rgba(161, 161, 170, 0.12);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  border-color: rgba(56, 189, 248, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
 .dark .tip-glow {
@@ -1312,39 +1312,39 @@ function onIconError(e) {
 }
 
 .dark .carousel-card.is-focused .category-block {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.2);
-  border-color: rgba(104, 116, 163, 0.15);
+  box-shadow: 0 0 32px rgba(56, 189, 248, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-color: rgba(56, 189, 248, 0.12);
 }
 
 .dark .carousel-card:not(.is-focused):hover .category-block {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-  border-color: rgba(104, 116, 163, 0.1);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.06);
+  border-color: rgba(56, 189, 248, 0.08);
 }
 
 .dark .tech-logo-card:hover {
-  border-color: rgba(104, 116, 163, 0.12);
+  border-color: rgba(56, 189, 248, 0.1);
 }
 
 .dark .carousel-arrow {
-  --site-arrow-active-border: rgba(104, 116, 163, 0.3);
+  --site-arrow-active-border: rgba(56, 189, 248, 0.15);
 }
 
 .dark .carousel-arrow:hover {
-  border-color: rgba(104, 116, 163, 0.15);
+  border-color: rgba(56, 189, 248, 0.12);
 }
 
 /* 友情链接 — 暗色模式 */
 .dark .friend-card {
-  background: rgba(31, 31, 35, 0.65);
-  border-color: rgba(161, 161, 170, 0.06);
+  background: #1a2435;
+  border-color: rgba(56, 189, 248, 0.04);
 }
 
 .dark .friend-card:hover {
-  border-color: rgba(161, 161, 170, 0.12);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+  border-color: rgba(56, 189, 248, 0.1);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
 }
 
 .dark .friend-card__footer {
-  border-top-color: rgba(161, 161, 170, 0.06);
+  border-top-color: rgba(56, 189, 248, 0.04);
 }
 </style>

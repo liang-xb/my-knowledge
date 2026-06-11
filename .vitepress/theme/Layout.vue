@@ -294,9 +294,9 @@ html.welcome-blocking .Layout {
   justify-content: center;
   width: 440px;
   max-width: 100%;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.12);
   color: var(--vp-button-alt-text);
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04), rgba(168, 130, 255, 0.06), rgba(99, 102, 241, 0.04));
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.04), rgba(34, 211, 238, 0.06), rgba(56, 189, 248, 0.04));
   backdrop-filter: blur(8px);
   font-weight: 600;
   white-space: nowrap;
@@ -318,9 +318,9 @@ html.welcome-blocking .Layout {
   background: linear-gradient(
     110deg,
     transparent 20%,
-    rgba(99, 102, 241, 0.04) 38%,
-    rgba(168, 130, 255, 0.06) 50%,
-    rgba(99, 102, 241, 0.04) 62%,
+    rgba(56, 189, 248, 0.04) 38%,
+    rgba(34, 211, 238, 0.06) 50%,
+    rgba(56, 189, 248, 0.04) 62%,
     transparent 80%
   );
   transform: translateX(-100%);
@@ -336,18 +336,18 @@ html.welcome-blocking .Layout {
 /* 边框脉冲光晕 — 柔和呼吸，范围更大、强度更低 */
 @keyframes border-pulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
   }
   50% {
-    box-shadow: 0 0 20px -4px rgba(99, 102, 241, 0.08);
+    box-shadow: 0 0 20px -4px rgba(56, 189, 248, 0.08);
   }
 }
 
 .hero-overlay-toggle:hover {
-  border-color: rgba(99, 102, 241, 0.25);
+  border-color: rgba(56, 189, 248, 0.2);
   color: var(--vp-button-alt-hover-text);
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(168, 130, 255, 0.1), rgba(99, 102, 241, 0.08));
-  box-shadow: 0 0 24px -4px rgba(99, 102, 241, 0.1);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), rgba(34, 211, 238, 0.08), rgba(56, 189, 248, 0.06));
+  box-shadow: 0 0 24px -4px rgba(56, 189, 248, 0.08);
   transform: translateY(-1px);
   animation: none;
 }
@@ -357,9 +357,9 @@ html.welcome-blocking .Layout {
 }
 
 .hero-overlay-toggle:active {
-  border-color: rgba(99, 102, 241, 0.3);
+  border-color: rgba(56, 189, 248, 0.25);
   color: var(--vp-button-alt-active-text);
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 130, 255, 0.12), rgba(99, 102, 241, 0.1));
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(34, 211, 238, 0.1), rgba(56, 189, 248, 0.08));
   transition: color 0.1s, border-color 0.1s, background 0.1s;
   transform: scale(0.98);
 }
@@ -369,24 +369,24 @@ html.welcome-blocking .Layout {
   z-index: 1;
 }
 
-/* 暗色模式 — 切换为紫罗兰色调 */
+/* 暗色模式 — 荧光蓝保持一致 */
 .dark .hero-overlay-toggle {
   animation-name: border-pulse-dark;
-  border-color: rgba(168, 130, 255, 0.12);
-  background: linear-gradient(135deg, rgba(168, 130, 255, 0.04), rgba(196, 167, 255, 0.05), rgba(168, 130, 255, 0.04));
+  border-color: rgba(56, 189, 248, 0.08);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.03), rgba(34, 211, 238, 0.04), rgba(56, 189, 248, 0.03));
 }
 
 .dark .hero-overlay-toggle:hover {
-  border-color: rgba(168, 130, 255, 0.2);
-  background: linear-gradient(135deg, rgba(168, 130, 255, 0.08), rgba(196, 167, 255, 0.09), rgba(168, 130, 255, 0.08));
+  border-color: rgba(56, 189, 248, 0.15);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), rgba(34, 211, 238, 0.08), rgba(56, 189, 248, 0.06));
 }
 
 @keyframes border-pulse-dark {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(168, 130, 255, 0);
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
   }
   50% {
-    box-shadow: 0 0 20px -4px rgba(168, 130, 255, 0.08);
+    box-shadow: 0 0 20px -4px rgba(56, 189, 248, 0.06);
   }
 }
 
@@ -394,9 +394,9 @@ html.welcome-blocking .Layout {
   background: linear-gradient(
     110deg,
     transparent 20%,
-    rgba(168, 130, 255, 0.03) 38%,
-    rgba(196, 167, 255, 0.05) 50%,
-    rgba(168, 130, 255, 0.03) 62%,
+    rgba(56, 189, 248, 0.03) 38%,
+    rgba(34, 211, 238, 0.05) 50%,
+    rgba(56, 189, 248, 0.03) 62%,
     transparent 80%
   );
 }
